@@ -28,45 +28,83 @@ body{
 }
 
 /* HEADER */
-header{
+.header{
+  background: linear-gradient(135deg,#1e3a8a,#2563eb,#3b82f6);
+  color:white;
+  padding:20px 0;
+  position:sticky;
+  top:0;
+  z-index:10;
+  box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.header-content{
   max-width:1100px;
   margin:auto;
-  padding:20px;
+  padding:0 20px;
   display:flex;
   align-items:center;
+  justify-content:space-between;
+}
+
+/* BRAND */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
 
 .logo{
   width:44px;
   height:44px;
   border-radius:12px;
-  background:#2563eb;
-  color:white;
+  background:rgba(255,255,255,.15);
+  backdrop-filter:blur(10px);
   display:flex;
   align-items:center;
   justify-content:center;
   font-weight:700;
+  font-size:18px;
 }
 
-nav{
-  margin-left:auto;
+.title{
+  font-weight:700;
+  font-size:16px;
 }
 
+.subtitle{
+  font-size:12px;
+  opacity:.8;
+}
+
+/* BUTTONS */
 .btn{
-  background:#2563eb;
-  color:white;
-  border:none;
   padding:10px 16px;
   border-radius:8px;
   font-weight:600;
   cursor:pointer;
   transition:.2s;
+  border:none;
 }
 
-.btn:hover{
-  background:#1d4ed8;
+.btn.primary{
+  background:white;
+  color:#1e3a8a;
 }
 
+.btn.primary:hover{
+  background:#e0ecff;
+}
+
+.btn.ghost{
+  background:transparent;
+  color:white;
+  margin-right:10px;
+}
+
+.btn.ghost:hover{
+  background:rgba(255,255,255,.15);
+}
 /* HERO */
 .hero{
   max-width:1100px;
@@ -168,16 +206,22 @@ nav{
 
 <body>
 
-<header>
-  <div class="logo">MS</div>
+<header class="header">
+  <div class="header-content">
 
-  <div style="margin-left:10px">
-    <strong>Meta gallery sharing</strong>
+    <div class="brand">
+      <div class="logo">MS</div>
+      <div>
+        <div class="title">Meta Gallery</div>
+        <div class="subtitle">Cloud sécurisé de partage</div>
+      </div>
+    </div>
+
+    <nav>
+      <button class="btn primary" id="loginBtn">Accès sécurisé</button>
+    </nav>
+
   </div>
-
-  <nav>
-    <button class="btn" id="loginBtn">Accès sécurisé</button>
-  </nav>
 </header>
 
 <section class="hero">
